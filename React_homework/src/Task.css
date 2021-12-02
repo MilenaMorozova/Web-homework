@@ -1,0 +1,50 @@
+.Task {
+  margin-left: 100px;
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+
+  position: relative;
+  width: 400px;
+  height: 90px;
+
+  background: #FFFFFF;
+  border-radius: 6px;
+}
+
+.Buttons {
+  align-items:flex-end;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
+.DeleteButton {
+  position: relative;
+  margin-left: 20px;
+  color: #e00b0b;
+}
+
+.ChangeButton {
+  position: relative;  
+  color: #0639df;
+}
+
+.CreateButton {
+  margin-left: 5px;
+}
+
+.SaveButton {
+  color: #0639df;
+}
+
+.taskInput {
+  width: 100%;
+}
+
+span {
+  word-break: break-word;
+}
