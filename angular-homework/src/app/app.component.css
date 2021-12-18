@@ -1,0 +1,13 @@
+.recipeBook {
+    width: 100%;
+    display: flex;
+}
+
+.recipeList {
+    width: 50%;
+}
+
+
+.recipeInfo {
+    width: 50%;
+}

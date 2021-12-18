@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-card-subtitle>{{ recipe.time_cooking }}</mat-card-subtitle>
+  <mat-card-title>{{ recipe.title }}</mat-card-title>
+  <mat-card-content>
+    <li *ngFor="let step of recipe.steps"></li>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">ADD INGREDIENTS TO CART</button>
+  </mat-card-actions>
+</mat-card>
