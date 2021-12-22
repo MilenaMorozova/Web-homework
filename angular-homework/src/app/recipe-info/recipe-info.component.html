@@ -1,10 +1,23 @@
 <mat-card>
-  <mat-card-subtitle>{{ recipe.time_cooking }}</mat-card-subtitle>
   <mat-card-title>{{ recipe.title }}</mat-card-title>
+  <mat-card-content> {{recipe.description}} </mat-card-content>
+  
+  <mat-card-content> Вам понадобится: </mat-card-content>
   <mat-card-content>
-    <li *ngFor="let step of recipe.steps"></li>
+    <ul>
+      <li *ngFor="let ingredient of recipe.ingredients"> {{ ingredient.name }} </li>
+    </ul>
   </mat-card-content>
+
+  <mat-card-content> Как готовить: </mat-card-content>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let step of recipe.steps"> {{ step }} </li>
+    </ul>
+  </mat-card-content>
+
+  <mat-card-subtitle>Примерное время готовки: {{recipe.time_cooking}} </mat-card-subtitle>
   <mat-card-actions>
-    <button mat-raised-button color="primary">ADD INGREDIENTS TO CART</button>
+    <button mat-raised-button color="primary" (click)="addIngredientsToShopCart()">ADD INGREDIENTS TO CART</button>
   </mat-card-actions>
 </mat-card>

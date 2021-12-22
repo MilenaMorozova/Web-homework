@@ -1,0 +1,13 @@
+.ShopCart {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    width: 200px;
+    z-index: 1;
+    background-color: blanchedalmond;
+    padding: 10px;
+}
+
+.ShopCartButton {
+    float: right;
+}

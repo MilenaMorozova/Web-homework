@@ -1,0 +1,6 @@
+<div>
+    <button mat-raised-button color="primary" class="ShopCartButton" (click)="changeExpandFlag()">SHOP CART</button>
+</div>
+<div *ngIf="isExpanded" class="ShopCart">
+    <app-shop-cart-item *ngFor="let item of getAllItem()" [shopCartItem]="item"></app-shop-cart-item>
+</div>

@@ -3,6 +3,6 @@
     <mat-card-subtitle>{{ recipe.time_cooking }}</mat-card-subtitle>
     <mat-card-content>{{ recipe.description }}</mat-card-content>
     <mat-card-actions>
-      <button mat-button color="primary">OPEN</button>
+      <button mat-button color="primary" (click)="selected()">OPEN</button>
     </mat-card-actions>
 </mat-card>

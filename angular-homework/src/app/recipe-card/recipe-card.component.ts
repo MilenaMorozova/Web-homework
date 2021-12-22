@@ -1,27 +1,23 @@
 import { Component, Input, OnInit } from '@angular/core';
-
-export interface Recipe{
-  title: string;
-  time_cooking: string;
-  description: string;
-  steps: string[];
-  ingredients: [];
-}
+import { RecipeService } from 'src/service/recipe_service';
+import { Recipe } from '../bd/recipe_book';
 
 @Component({
   selector: 'app-recipe-card',
   templateUrl: './recipe-card.component.html',
-  styleUrls: ['./recipe-card.component.css'
-]
+  styleUrls: ['./recipe-card.component.css']
 })
 export class RecipeCardComponent implements OnInit {
 
   @Input()
   recipe!: Recipe;
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  selected() {
+    this.recipeService.updateSelectedRecipe(this.recipe);
   }
 
 }

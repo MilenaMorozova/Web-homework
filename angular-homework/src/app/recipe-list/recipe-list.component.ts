@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../recipe-card/recipe-card.component';
+import { Recipe, recipeBook } from '../bd/recipe_book';
 
 @Component({
   selector: 'app-recipe-list',
@@ -8,26 +8,10 @@ import { Recipe } from '../recipe-card/recipe-card.component';
 })
 export class RecipeListComponent implements OnInit {
 
-  recipes: Recipe[] = [
-    {
-      title: 'Картошка с котлеткой',
-      time_cooking: "45 минут",
-      description: "Очень вкусно!",
-      steps: ["Свари картошку", "пожарь котлету"],
-      ingredients: []
-    },
-    {
-      title: 'Пельмени',
-      time_cooking: "10-15 минут",
-      description: "Со сметанкой вкуснее!",
-      steps: ["Возьми пельмени", "кинь в кипящую воду и вари 5 миинут", "Добавь соль, перец по вкусу"],
-      ingredients: []
-    }
-  ]
+  recipes: Recipe[] = recipeBook;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
