@@ -1,6 +1,11 @@
 <mat-list-item>
-    <div>
-        {{ shopCartItem.name }}
-        <input type="number" class="IngredientInput" [value]="shopCartItem.count"/>
-    </div>
+    <form [formGroup]="countForm" novalidate>
+        <div>
+            <label>{{ shopCartItem.name }}</label>
+            <input type="number" formControlName="count" class="IngredientInput" [value]="shopCartItem.count"/>
+            <button mat-icon-button color="primary" (click)="deleteThis()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </form>
 </mat-list-item>

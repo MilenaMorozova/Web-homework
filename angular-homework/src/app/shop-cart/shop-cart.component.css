@@ -2,7 +2,7 @@
     position: absolute;
     right: 0px;
     top: 40px;
-    width: 200px;
+    min-width: 350px;
     z-index: 1;
     background-color: blanchedalmond;
     padding: 10px;
@@ -10,4 +10,16 @@
 
 .ShopCartButton {
     float: right;
+}
+
+.CreateNewItemButton {
+    font-size:small;
+}
+
+.CreateNewItemInput {
+    width: 100px;
+}
+
+input {
+    margin: 0px 10px;
 }

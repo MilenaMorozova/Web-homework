@@ -11,7 +11,7 @@ export class ShopCartService {
 
     constructor () {}
 
-    updateShopCart(shopItem: ShopCartItem) {
+    addToShopCart(shopItem: ShopCartItem) {
         let shopCart = this.getShopCart();
         for (let item of shopCart) {
             if (item.name == shopItem.name) {
@@ -24,8 +24,25 @@ export class ShopCartService {
         this.shopCartSubject.next(shopCart);
     }
 
+    updateCountShopCartItem(name: string, count: number) {
+        let shopCart = this.getShopCart();
+        for (let item of shopCart) {
+            if (item.name == name) {
+                item.count = count;
+                this.shopCartSubject.next(shopCart);
+                return;
+            }
+        }
+        console.log(this.getShopCart());
+    }
+
     getShopCart(): ShopCartItem[] {
         return this.shopCartSubject.getValue();
+    }
+
+    deleteShopCartItem(shopItem: ShopCartItem) {
+        let shopCartWithoutItem = this.getShopCart().filter((item) => item.name != shopItem.name);
+        this.shopCartSubject.next(shopCartWithoutItem);
     }
 
 }

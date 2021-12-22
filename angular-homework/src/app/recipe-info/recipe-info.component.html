@@ -5,7 +5,7 @@
   <mat-card-content> Вам понадобится: </mat-card-content>
   <mat-card-content>
     <ul>
-      <li *ngFor="let ingredient of recipe.ingredients"> {{ ingredient.name }} </li>
+      <li *ngFor="let ingredient of recipe.ingredients"> {{ ingredient.name }} - {{ ingredient.count }}</li>
     </ul>
   </mat-card-content>
 

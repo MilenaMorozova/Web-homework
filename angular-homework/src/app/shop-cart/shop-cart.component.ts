@@ -10,6 +10,9 @@ import { ShopCartItem } from '../bd/shop-cart';
 export class ShopCartComponent implements OnInit {
 
   isExpanded: boolean = false;
+  newItemForm : any = {
+    name: ''
+  }
 
   constructor(private shopCartService: ShopCartService) { }
 
@@ -23,4 +26,16 @@ export class ShopCartComponent implements OnInit {
     return this.shopCartService.getShopCart();
   }
 
+  createNewShopItem() {
+    if (this.newItemForm.name == ''){
+      return;
+    }
+
+    let newShopItem: ShopCartItem = {
+      name: this.newItemForm.name,
+      count: 1
+    };
+    this.shopCartService.addToShopCart(newShopItem);
+    this.newItemForm.name = '';
+  }
 }
